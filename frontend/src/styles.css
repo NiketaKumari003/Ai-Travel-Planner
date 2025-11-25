@@ -1,0 +1,12 @@
+body{ font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f8fb; color:#102a43 }
+.nav{ display:flex; gap:1rem; padding:1rem; background:#fff; box-shadow:0 2px 4px rgba(0,0,0,0.05) }
+.nav a{ text-decoration:none; color:#0b69ff }
+.container{ padding:2rem; max-width:900px; margin:0 auto }
+.chatbox{ min-height:200px; border:1px solid #e2e8f0; padding:1rem; background:#fff; margin-bottom:1rem }
+.row{ display:flex; gap:8px }
+input{ padding:8px; flex:1 }
+button{ padding:8px 12px }
+.msg.user{ text-align:right }
+.msg.bot{ text-align:left }
+.form label{ display:block; margin-bottom:8px }
+.result{ background:#fff; padding:1rem; border:1px solid #e2e8f0; margin-top:1rem }

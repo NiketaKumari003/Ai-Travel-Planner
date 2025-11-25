@@ -1,0 +1,22 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    container_name: ai_traveler_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./ai_traveler.db
+      - JWT_SECRET=devsecret
+      - AI_API_KEY=your_api_key_here
+    volumes:
+      - ./backend:/app
+  frontend:
+    build: ./frontend
+    container_name: ai_traveler_frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_URL=http://localhost:8000
