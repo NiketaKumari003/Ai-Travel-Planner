@@ -17,7 +17,13 @@ class BookingPayload(BaseModel):
 def book(payload: BookingPayload, user=Depends(get_current_user)):
     engine = get_engine()
     with Session(engine) as session:
-        booking = Booking(user_id=user.id, trip_id=payload.trip_id, provider=payload.provider, type=payload.type, details=payload.details)
+        booking = Booking(
+            user_id=user.id,
+            trip_id=payload.trip_id,
+            provider=payload.provider,
+            type=payload.type,
+            details_json=payload.details,
+        )
         session.add(booking)
         session.commit()
         session.refresh(booking)
